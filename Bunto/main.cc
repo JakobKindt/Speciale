@@ -15,10 +15,7 @@ int main(){
     // std::cout << "\n";
     // std::vector<double> taus{0, pi/10., pi*2/10., pi*3/10., pi*4/10., pi*5/10., pi*6/10., pi*7/10., pi*8/10., pi*9/10., pi*10/10., pi*11/10., pi*12/10., pi*13/10., pi*14/10., pi*15/10., pi*16/10., pi*17/10., pi*18/10., pi*19/10., pi*20/10.};
     double n = 1e16, varepsilon_0 = 0.5, r = std::asinh(std::sqrt(varepsilon_0*n));
-    
-    // std::vector<double> angles{0., 0., pi/2, pi}, modula{0., r, r, r};
 
-    // std::vector<double> angles{0., pi}, modula{0., r};
     std::vector<double> angles{0}, modula{r};
 
     std::complex<double> zeta = std::polar(0., 0.);
@@ -53,6 +50,7 @@ int main(){
     
 
     // std::complex<double> zeta = std::polar(r, 0.);
+    // double x0 = std::abs(alpha_0) * std::exp(-r);
     // // r = std::abs(z);
     // std::complex<double> alpha_0 = std::polar(std::sqrt(n*(1.0-varepsilon_0)), 0.0), z = zeta;
     // std::complex<double> phase = std::polar(1., std::arg(zeta));
@@ -61,14 +59,12 @@ int main(){
     //         std::complex<double> conj_beta = std::conj(beta), conj_alpha_0 = std::conj(alpha_0);
     //         return 1/(pi*std::cosh(r))*std::exp(-(std::norm(alpha_0) + std::norm(beta)) + (conj_beta*alpha_0 + beta*conj_alpha_0)/std::cosh(r) - ((phase*(conj_beta*conj_beta - conj_alpha_0*conj_alpha_0) + std::conj(phase)*(beta*beta - alpha_0*alpha_0))*std::tanh(r)/2.));
     //     };
-    // // std::cout << r << "\n";
-    // // Note that norm(z) returns norm squared of z, while abs(z) returns the norm.
     // double L = 2*(std::abs(alpha_0) + std::exp(r) + 1);
     // std::function<std::complex<double>(std::complex<double>)> F = [=](std::complex<double> z){return std::norm(z)*std::exp(-std::norm(z));};
     // L = 5e8;
-    // double x0 = std::abs(alpha_0) * std::exp(-r);
+    
     // double M = 1.8;
-    // std::complex<double> test = C_integrate_CC(Q, x0 - M, x0 + M, -L, L, 1e-5);
+    // std::complex<double> test = C_integrate_CC(Q, x0 - M, x0 + M, -L, L);
     // std::cout << "Testing integral = " << test << ", theoretical = " << 1 << "\n";
 
 
@@ -99,7 +95,7 @@ int main(){
     // // L = 5e8;
     // // double x0 = std::abs(alpha_0) * std::exp(-r);
     // // double M = 1.8;
-    // std::complex<double> test = C_integrate_CC(F, x0 - M, x0 + M, -L, L, 1e-5);
+    // std::complex<double> test = C_integrate_CC(F, x0 - M, x0 + M, -L, L);
     // std::cout << "Testing integral = " << test << ", theoretical = " << 1 << "\n";
 return 0;
 }

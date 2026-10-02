@@ -1,0 +1,4 @@
+Calculated a^2 = (1e+16,-4.064e-10), theoretical = (5e+15,0). Calculated a^dagger a = 1e+16, theoretical = 1e+16
+Calculated a^2 = (9.99045,-0.0786058), theoretical = (10,0). Calculated a^dagger a = 1e+16, theoretical = 1e+16
+Calculated a^2 = (5e+15,-5e+15), theoretical = (5e+15,-5e+15). Calculated a^dagger a = 1e+16, theoretical = 1e+16
+Calculated a^2 = (1e+16,-0.612323), theoretical = (1e+16,-0.612323). Calculated a^dagger a = 1e+16, theoretical = 1e+16

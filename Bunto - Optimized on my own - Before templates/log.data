@@ -1,0 +1,35 @@
+\
+set terminal svg ;\
+set output "data.svg" ;\
+set xrange[0:25] ;\
+set key outside right ;\
+set multiplot layout 3,1 ;\
+set ylabel "Amplitude" ;\
+set format y "%.0t" ;\
+set label "10^{-15}" at graph 0.01,1.05 ;\
+plot \
+	"data.txt" using 1:2 index 0 with linespoints title "{/Symbol z} = 0" ,\
+	"data.txt" using 1:2 index 1 with linespoints title "{/Symbol z} = r" ,\
+	"data.txt" using 1:2 index 2 with linespoints title "{/Symbol z} = ir" ,\
+	"data.txt" using 1:2 index 3 with linespoints title "{/Symbol z} = -r" ;\
+unset label ;\
+set ylabel "Contrast C" ;\
+set yrange[-0.2:1.3] ;\
+set ytics 1 ;\
+set mytics 5 ;\
+plot \
+	"data.txt" using 1:3 index 0 with linespoints title "{/Symbol z} = 0" ,\
+	"data.txt" using 1:3 index 1 with linespoints title "{/Symbol z} = r",\
+	"data.txt" using 1:3 index 2 with linespoints title "{/Symbol z} = ir",\
+	"data.txt" using 1:3 index 3 with linespoints title "{/Symbol z} = -r";\
+set ylabel "{/Symbol q}" ;\
+set xlabel "Energy" ;\
+set yrange[-1:1] ;\
+set ytics 1 ;\
+set mytics 5 ;\
+plot \
+	"data.txt" using 1:4 index 0 with linespoints title "{/Symbol z} = 0" ,\
+	"data.txt" using 1:4 index 1 with linespoints title "{/Symbol z} = r" ,\
+	"data.txt" using 1:4 index 2 with linespoints title "{/Symbol z} = ir" ,\
+	"data.txt" using 1:4 index 3 with linespoints title "{/Symbol z} = -r" ;\
+unset multiplot

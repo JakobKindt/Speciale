@@ -27,7 +27,7 @@ int main(){
         zeta = std::polar(modula[i], angles[i]); S.update(zeta);
             for (int j = 0; j < (int)Es.size(); ++j){
             E = Es[j];
-            
+            std::cout << "Calculated a^2 = " << S.a0_squared << ", theoretical = " << S.alpha_0*S.alpha_0 - std::polar(1., std::arg(S.zeta))/2.*std::sinh(2*r)  << ". Calculated a^dagger a = " << S.a0_dagger_a0 << ", theoretical = " << std::norm(S.alpha_0) + std::sinh(S.r)*std::sinh(S.r) << "\n";
             myoutput << E << " " << S.A(E)*0.7729 << " " << S.C(E) << " " << S.theta(E) << "\n";
             }
             myoutput << "\n\n";

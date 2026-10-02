@@ -62,10 +62,11 @@ void sim::update(std::complex<double> z){
     };
 
     double acc = 1e-5; 
+
     // double x0 = std::abs(alpha_0) * std::exp(-r), L = std::exp(r)*2.8, M = 2.6/su;
-    
-    a0_squared = C_integrate_CC(f_a0_squared, x0 - M, x0 + M, -L, L, acc);
-    a0_dagger_a0 = std::real(C_integrate_CC(f_a0_dagger_a0, x0 - M, x0 + M, -L, L, acc));
+    int N = 1e5;
+    a0_squared = C_integrate_CC(f_a0_squared, x0 - M, x0 + M, -L, L, N, N);
+    a0_dagger_a0 = std::real(C_integrate_CC(f_a0_dagger_a0, x0 - M, x0 + M, -L, L, N, N));
 }
 
 
